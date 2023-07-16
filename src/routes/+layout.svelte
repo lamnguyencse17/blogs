@@ -1,5 +1,11 @@
 <script>
 	import '../app.css';
+	import Footer from './footer.svelte';
+	import Header from './header.svelte';
 </script>
 
-<slot />
+<Header />
+<main class="flex-grow min-h-full">
+	<slot />
+</main>
+<Footer />
