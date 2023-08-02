@@ -9,22 +9,19 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article>
-	<!-- Title -->
-	<hgroup>
-		<h1>{data.meta.title}</h1>
+<article class='flex flex-col flex-grow'>
+	<hgroup class="flex flex-col justify-center items-center">
+		<h1 class="font-sans font-bold text-3xl">{data.meta.title}</h1>
 		<p>Published at {dayjs(data.meta.date).format('DD/MM/YYYY')}</p>
 	</hgroup>
 
-	<!-- Tags -->
-	<div class="tags">
+	<div class="flex flex-row-reverse gap-2">
 		{#each data.meta.categories as category}
 			<span class="surface-4">&num;{category}</span>
 		{/each}
 	</div>
 
-	<!-- Post -->
-	<div class="prose">
+	<div class="flex-grow">
 		<svelte:component this={data.content} />
 	</div>
 </article>

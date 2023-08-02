@@ -1,0 +1,1 @@
+<h2 class='font-sans font-semibold text-2xl my-4'><slot /></h2>

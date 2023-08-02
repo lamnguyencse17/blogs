@@ -5,7 +5,7 @@
 </script>
 
 <Header />
-<main class="flex-grow">
+<main class="flex flex-grow px-4">
 	<slot />
 </main>
 <Footer />
