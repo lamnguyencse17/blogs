@@ -10,11 +10,11 @@
 	<title>{title}</title>
 </svelte:head>
 
-<section>
-	<ul class="blogs">
+<section class='w-full'>
+	<ul class="w-full">
 		{#each data.blogs as blog}
-			<li class="">
-				<a href={`blog/${blog.slug}`} class="title">{blog.title}</a>
+			<li class="p-4 bg-gray-200 border border-gray-300 rounded-lg hover:bg-gray-100 w-full">
+				<a href={`blog/${blog.slug}`} class="font-sans text-xl">{blog.title}</a>
 				<p class="date">Updated {dayjs(blog.date).fromNow(true)}</p>
 				<p class="description">{blog.description}</p>
 			</li>
