@@ -8,6 +8,8 @@ categories:
 status: published
 ---
 
+## Table of contents
+
 ## Another blog?
 
 It's never enough. It's just like every other blog. It's about my personal experience: What I've been learning, How to improve stuff, My thought process.

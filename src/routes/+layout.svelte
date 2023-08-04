@@ -4,8 +4,10 @@
 	import Header from './header.svelte';
 </script>
 
-<Header />
-<main class="flex flex-grow container px-4 mx-auto">
-	<slot />
-</main>
-<Footer />
+<div class="flex min-h-screen w-full flex-col bg-gray-100">
+	<Header />
+	<main class="container mx-auto mt-20 flex flex-grow px-4">
+		<slot />
+	</main>
+	<Footer />
+</div>
