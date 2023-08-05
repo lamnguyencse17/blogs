@@ -13,8 +13,8 @@
 
 <article class="flex flex-grow flex-col rounded-lg border border-gray-300 bg-white px-2 py-8">
 	<hgroup class="flex flex-col items-center justify-center px-4">
-		<h1 class="font-sans text-3xl font-bold">{data.meta.title}</h1>
-		<p>Published at {dayjs(data.meta.date).format('DD/MM/YYYY')}</p>
+		<h1 class="font-manrope text-3xl font-bold">{data.meta.title}</h1>
+		<p>Published at {dayjs(data.meta.createdAt).format('DD/MM/YYYY')}</p>
 	</hgroup>
 
 	<div class="flex flex-row-reverse gap-2 px-4">

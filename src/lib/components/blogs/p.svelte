@@ -1,3 +1,3 @@
-<p class="mt-2 pl-4 text-justify font-sans text-lg leading-snug">
+<p class="mt-2 pl-4 text-justify font-manrope text-lg font-light leading-snug">
 	<slot />
 </p>

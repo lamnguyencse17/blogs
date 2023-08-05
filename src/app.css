@@ -1,5 +1,5 @@
-@import '@fontsource/jetbrains-mono';
-@import '@fontsource/manrope';
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;

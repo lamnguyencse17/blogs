@@ -1,1 +1,5 @@
-<h2 class="my-4 font-sans text-2xl font-semibold"><slot /></h2>
+<script lang="ts">
+	export let id: string;
+</script>
+
+<h2 class="my-4 font-manrope text-2xl font-semibold" {id}><slot /></h2>
