@@ -1,19 +1,38 @@
-export type Categories =
-	| 'introductory'
-	| 'personal thoughts'
-	| 'react'
-	| 'frontend'
-	| 'backend'
-	| 'debug'
-	| 'tips';
+type DateMetadata = {
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+};
 
-export type BlogStatus = 'published' | 'draft';
+type ResponseMeta = {
+	pagination: {
+		page: number;
+		pageSize: number;
+		pageCount: number;
+		totle: number;
+	};
+};
+
+export type Category = {
+	name: string;
+	locale: string;
+} & DateMetadata;
 
 export type Blog = {
-	title: string;
-	slug: string;
-	description: string;
-	createdAt: string;
-	categories: Categories[];
-	status: BlogStatus;
+	id: number;
+	attributes: {
+		title: string;
+		slug: string;
+		description: string;
+		content: string;
+		categories: {
+			data: Category[];
+		};
+		locale: string;
+	} & DateMetadata;
+};
+
+export type BlogResponse = {
+	data: Blog[];
+	meta: ResponseMeta;
 };
