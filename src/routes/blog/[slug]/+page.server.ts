@@ -27,6 +27,5 @@ export const load = async ({ fetch, params }) => {
 	await fs.mkdir(path.dirname(targetPath), { recursive: true });
 	await fs.rm(targetPath, { force: true });
 	await fs.writeFile(targetPath, blog.attributes.content);
-	console.log({ blog });
 	return { ...blog };
 };

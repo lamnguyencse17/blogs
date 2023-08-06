@@ -3,7 +3,6 @@ import type { ComponentType } from 'svelte';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ data, params }) => {
-	console.log({ data });
 	try {
 		const parsedComponent: { default: ComponentType } = await import(
 			`../../../blogs/${params.slug}.md`
