@@ -5,14 +5,11 @@ const BLOG_ENDPOINT = `${STRAPI_API}/blogs?populate=categories`;
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	// const response = await fetch('api/blogs');
-	const fetchBlogsRespone = await fetch(BLOG_ENDPOINT, {
+	const fetchBlogResponse = await fetch(BLOG_ENDPOINT, {
 		headers: {
 			Authorization: `bearer ${STRAPI_API_TOKEN}`
 		}
 	});
-	const blogsData = (await fetchBlogsRespone.json()) as BlogResponse;
-	console.log(JSON.stringify(blogsData, null, 2));
-	// const blogs: Blog[] = await response.json();
+	const blogsData = (await fetchBlogResponse.json()) as BlogResponse;
 	return { ...blogsData };
 }

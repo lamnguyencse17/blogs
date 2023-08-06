@@ -1,18 +1,16 @@
-import type { Blog } from '$lib/types.js';
 import { error } from '@sveltejs/kit';
 import type { ComponentType } from 'svelte';
+import type { PageLoad } from './$types';
 
-export const load = async ({ params }) => {
+export const load: PageLoad = async ({ data, params }) => {
+	console.log({ data });
 	try {
-		const blog: { default: ComponentType; metadata: Blog } = await import(
+		const parsedComponent: { default: ComponentType } = await import(
 			`../../../blogs/${params.slug}.md`
 		);
-
-		return {
-			content: blog.default,
-			meta: blog.metadata
-		};
+		return { ...data, markdownComponent: parsedComponent.default };
 	} catch (e) {
+		console.log(e);
 		throw error(404, `Could not find ${params.slug}`);
 	}
 };

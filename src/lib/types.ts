@@ -26,7 +26,10 @@ export type Blog = {
 		description: string;
 		content: string;
 		categories: {
-			data: Category[];
+			data: {
+				id: number;
+				attributes: Category;
+			}[];
 		};
 		locale: string;
 	} & DateMetadata;
