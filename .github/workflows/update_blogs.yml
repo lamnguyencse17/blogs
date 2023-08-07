@@ -46,7 +46,7 @@ jobs:
           git status --short
           if [[ $(git status --short) == "" ]]; then
             echo "No changes to push"
-            exit 0
+            exit 1
           fi
 
       - name: Push changes
