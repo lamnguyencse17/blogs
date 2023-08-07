@@ -25,7 +25,7 @@ export const load = async ({ fetch, params }) => {
 	const targetPath = path.join('src/blogs', `${params.slug}.md`);
 
 	await fs.mkdir(path.dirname(targetPath), { recursive: true });
-	await fs.rm(targetPath, { force: true });
 	await fs.writeFile(targetPath, blog.attributes.content);
+	await fs.access(targetPath, fs.constants.R_OK);
 	return { ...blog };
 };
