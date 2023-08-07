@@ -2,4 +2,4 @@
 	export let id: string;
 </script>
 
-<h2 class="my-4 font-manrope text-xl font-semibold" {id}><slot /></h2>
+<h2 class="text-md my-4 font-manrope font-semibold" {id}><slot /></h2>

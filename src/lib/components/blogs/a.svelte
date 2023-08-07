@@ -2,4 +2,4 @@
 	export let href: string;
 </script>
 
-<a class="font-manrope font-medium hover:text-sky-800" {href}><slot /></a>
+<a class="font-manrope font-black underline hover:text-sky-800" {href}><slot /></a>
