@@ -84,7 +84,13 @@ pnpm build
 git add -A .
 ```
 
-and we are good to go!
+This is the setup for local development.
+
+For syncing from CMS to Github I am creating a Strapi webhook that will be proxied from to Github that will automatically commit changes based on the CMS new contents
+
+![Sync from Strapi to Github](https://cms.lamnguyencse17.dev/uploads/strapi_sync_github_7343377cd6.png)
+
+Now I don't have to commit every time I updates stuff! More time to do more stuff
 
 ## Conclusion
 I believe we did learn some stuff through this blog building process
