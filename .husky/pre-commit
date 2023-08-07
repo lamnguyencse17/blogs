@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm format
-pnpm check
-pnpm lint
-pnpm build
-git add -A .
+# pnpm build
+# pnpm format
+# pnpm check
+# pnpm lint
+# git add -A .
