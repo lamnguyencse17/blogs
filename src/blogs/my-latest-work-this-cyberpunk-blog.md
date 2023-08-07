@@ -9,19 +9,16 @@ There should be no good and bad system design I guess? Or at least it should not
 Lately I realized that I was just too fed up with having to deal with this and just go with a CMS for the sake of my own sanity and just to **GET THINGS DONE**. Never in my life I feel so comfortable working on a blog like now.
 
 Here is the techstack you've been waiting for:
-
 - [Strapi](https://strapi.io/) with **Postgres** (self-hosted on my [Caprover](https://caprover.com/) ultimate server)
 - The blog itself is written with **Svelte** (hosted by [Vercel](https://vercel.com/lamnguyenkhmt2017))
 
 A quick note on why I choose `Strapi`
-
 - I can easily customize this because it's `Node.js`
 - I can write my stuff while uploading and sharing it at the same place and have the directly shared (Some storage solution like Nextcloud doesn't expose such direct links)
 
 ## The core requirement
 
 Here's the point (or the requirement)
-
 - I don't want the blog to be saved in Github (failed miserably)
 - I want to store it on the CMS which I can easily and dynamically change
 
@@ -36,7 +33,6 @@ Since I am using Svelte, [Mdsvex](https://mdsvex.pngwn.io/) is a no-brainer. It'
 Wait the `Markdown files`??? I don't want to save it in my github at all... How can I deal with this? I can't at all though because `Mdsvex` never has this thought in mind LOL ([the whole convo if you are interested](https://github.com/pngwn/MDsveX/issues/418))
 
 ### The cyberpunk in its shape
-
 So what's the plan?
 
 The plan is we are going to butcher it by fetching the content from `Strapi` write it into `Markdown` and import it back in for `Mdsvex` to handle it LOL.
@@ -70,11 +66,9 @@ export const load = async ({ fetch, params }) => {
 	await fs.writeFile(targetPath, blog.attributes.content);
 };
 ```
-
 It maybe that each step is made in a different process for caching purpose? so it can't find the markdown blogs?
 
 ### Who let the dogs out?
-
 So... we have to generate the blogs just to pass the Vercel build. That's not hard but can we automate this so that our sanity is kept high
 
 Sure! With [Husky](https://typicode.github.io/husky/)!
@@ -93,9 +87,7 @@ git add -A .
 and we are good to go!
 
 ## Conclusion
-
 I believe we did learn some stuff through this blog building process
-
 - Using the right tool for the right purpose is important. Using Strapi was the right call as it creates the fatest result I've ever seen
 - Sometimes, the right tool (I talking about you `Mdsvex`) can be a pain in the butt
 - Despite this blog being the worst design I've ever created, I am happy with it and it's not really annoying once it's working correctly
