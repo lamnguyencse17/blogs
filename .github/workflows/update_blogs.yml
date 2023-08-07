@@ -41,6 +41,9 @@ jobs:
           git config --global user.name "lamnguyencse17"
           git config --global user.password ${{ secrets.TOKEN }}
 
+      - name: Build blog
+        run: pnpm build
+
       - name: Check for changes
         run: |
           git status --short
