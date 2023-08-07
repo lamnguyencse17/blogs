@@ -18,4 +18,4 @@ Don't wait for this to be updated. I am lazy.
 
 Contact me if I mess things up. I am so subjective that I may suffer from it.
 
-Have fun~~
+Have fun.

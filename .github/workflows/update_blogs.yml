@@ -1,7 +1,7 @@
 on: workflow_dispatch
 
 env:
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GH_TOKEN: ${{ secrets.TOKEN }}
   GH_BRANCH: ${{ secrets.GH_BRANCH }}
   GH_NAME: ${{ secrets.GH_NAME }}
   GH_REPO: ${{ secrets.GH_REPO }}
