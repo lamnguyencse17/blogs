@@ -1,1 +1,1 @@
-<li class="list-disc"><slot /></li>
+<li class="list-disc font-manrope text-lg font-light"><slot /></li>
