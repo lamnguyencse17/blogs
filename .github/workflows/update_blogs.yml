@@ -41,6 +41,14 @@ jobs:
           git config --global user.name "lamnguyencse17"
           git config --global user.password ${{ secrets.TOKEN }}
 
+      - name: Check for changes
+        run: |
+          git status --short
+          if [[ $(git status --short) == "" ]]; then
+            echo "No changes to push"
+            exit 0
+          fi
+
       - name: Push changes
         run: |
           git add .
