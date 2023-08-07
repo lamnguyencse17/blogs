@@ -1,5 +1,16 @@
 on: workflow_dispatch
 
+env:
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GH_BRANCH: ${{ secrets.GH_BRANCH }}
+  GH_NAME: ${{ secrets.GH_NAME }}
+  GH_REPO: ${{ secrets.GH_REPO }}
+  GH_WORKFLOW: ${{ secrets.GH_WORKFLOW }}
+  INVALIDATE_SECRET: ${{ secrets.INVALIDATE_SECRET }}
+  SECRET_FIELD: ${{ secrets.SECRET_FIELD }}
+  STRAPI_API: ${{ secrets.STRAPI_API }}
+  STRAPI_API_TOKEN: ${{ secrets.STRAPI_API_TOKEN }}
+
 jobs:
   cache-and-install:
     runs-on: ubuntu-latest
