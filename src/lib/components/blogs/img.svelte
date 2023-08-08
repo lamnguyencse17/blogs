@@ -5,5 +5,5 @@
 
 <div class="mx-auto my-4 flex flex-col items-center justify-center">
 	<img {src} {alt} />
-	<p>{alt}</p>
+	<p class="font-manrope">{alt}</p>
 </div>
