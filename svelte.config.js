@@ -15,8 +15,18 @@ const mdsvexOptions = {
 	},
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'poimandres' });
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
+			const highlighter = await shiki.getHighlighter({ theme: 'slack-dark' });
+			const html = escapeSvelte(
+				shiki.renderToHtml(highlighter.codeToThemedTokens(code, lang), {
+					fg: highlighter.getForegroundColor('slack-dark'),
+					bg: highlighter.getBackgroundColor('slack-dark'),
+					elements: {
+						pre: ({ className, style, children }) => {
+							return `<pre style="${style}" class="m-4 p-2 ${className}">${children}</pre>`;
+						}
+					}
+				})
+			);
 			return `{@html \`${html}\` }`;
 		}
 	},

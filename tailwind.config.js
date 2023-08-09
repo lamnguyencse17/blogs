@@ -12,5 +12,5 @@ export default {
 		}
 	},
 	plugins: [],
-	safelist: [...randomColors.map((color) => `hover:${color}`)]
+	safelist: [...randomColors.map((color) => `hover:${color}`), 'm-4', 'p-2']
 };
